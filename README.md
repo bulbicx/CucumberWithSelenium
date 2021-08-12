@@ -2,7 +2,7 @@
 
 This repository is part of a series of exercises done with Cucumber and Selenium. In particular the tasks solved were:
 
-##Task 1
+## Task 1
 
 1. Setup a Maven project with Selenium and Cucumber
 
@@ -15,12 +15,12 @@ This repository is part of a series of exercises done with Cucumber and Selenium
 Make sure to use hooks for setting up your webdrivers. These can be in the same file as the step definitions or in separate files and injected using PicoContainer
 	
 
-##Task 2
+## Task 2
 
 Add a calculator addition feature and implementation with Cucumber in the same project as your Selenium & Cucumber project that you created in task 1
 Use tag expressions to tell Cucumber to only run Selenium hooks for the Selenium features
 
-##Task 3
+## Task 3
 
 1. As a user, I want to login into thedemosite.co.uk to confirm my account was successfully registered.
  Steps include:
@@ -52,6 +52,6 @@ Steps include:
 
 POM not required.
 
-##Task 4
+## Task 4
 
 Go back through your Cucumber & Selenium tests from today and take screenshots of your tests (before and after every step), the screenshots need to be attached to your generated HTML report.
