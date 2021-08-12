@@ -34,4 +34,8 @@ public class AddUserPage {
 	public void clickAddUser() {
 		this.addUserLink.click();
 	}
+	
+	public String getUsernameDisplayed() {
+		return blockquote.getText();
+	}
 }
