@@ -16,7 +16,7 @@ public class WebDriverHooks {
 
 	private WebDriver driver;
 	
-	@Before("@search or @login")
+	@Before("@search or @login or @select_an_item")
 	public void setup() throws Exception {
 		if (driver == null) {
 			this.driver = WebDriverFactory.getDriver();
@@ -26,7 +26,7 @@ public class WebDriverHooks {
 		}
 	}
 	
-	@After("@search or @login")
+	@After("@search or @login or @select_an_item")
 	public void tearDown(Scenario scenario) {
 		scenario.attach(takeSceenshot(), "image/png", scenario.getName());
 		if (driver != null) this.driver.quit();

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.972">
-    <testcase classname="Login successfully" name="Login into the account" time="4.718">
-        <system-out><![CDATA[Given I navigate to "http://thedemosite.co.uk/".............................passed
-And I go to the add a user page.............................................passed
-And I register with someone and password123.................................passed
-And I am able to see a successful registration..............................passed
-When I go to the login page.................................................passed
-And I enter the username someone............................................passed
-And I enter the password password123........................................passed
-When I click on the login button............................................passed
-Then It should be displayed "**Successful Login**"..........................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="4.796">
+    <testcase classname="Select an item" name="Successful item selected" time="4.5">
+        <system-out><![CDATA[Given I navigate to website.................................................passed
+And I am in the right page..................................................passed
+And I am in the right section of the page...................................passed
+When I select an item from a list...........................................passed
+Then I can view the item was selected.......................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
