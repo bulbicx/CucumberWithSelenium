@@ -1,6 +1,5 @@
 package com.qa.cucumber_with_selenium.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,15 +19,19 @@ public class LoginPage {
 	@FindBy(css = "body > table > tbody > tr > td.auto-style1 > big > blockquote > blockquote > font > center > b")
 	private WebElement textValue;
 	
-	public LoginPage(WebDriver driver) throws Exception {
-		driver.get(URL);
+	public String getUrl() {
+		return this.URL;
+	}
 	
-		if (!driver.getTitle().equals("Login example page to test the PHP MySQL online system")) throw new Exception("Site not found");
+	public void insertUsername(String username) {
+		this.usernameLogin.sendKeys(username);
+	}
+	
+	public void insertPassword(String password) {
+		this.passwordLogin.sendKeys(password);
 	}
 
-	public void loginUser(String username, String password) {
-		this.usernameLogin.sendKeys(username);
-		this.passwordLogin.sendKeys(password);
+	public void clickLogin() {
 		this.loginBtn.click();
 	}
 

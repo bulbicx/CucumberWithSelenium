@@ -1,5 +1,7 @@
 package com.qa.cucumber_with_selenium.stepdefs;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,6 +16,7 @@ import io.cucumber.java.en.When;
 public class LoginStepsDefs {
 
 	private WebDriver driver;
+	private String username;
 	private AddUserPage addUserPage;
 	private LoginPage loginPage;
 	
@@ -33,44 +36,38 @@ public class LoginStepsDefs {
 	    this.addUserPage.clickAddUser();
 	}
 
-	@Given("I enter the username {word}")
-	public void iEnterTheUsername(String username) {
-	    this.ad
+	@Given("I register with {word} and {word}")
+	public void iRegister(String username, String password) {
+		this.username = username;
+	    this.addUserPage.register(username, password);
 	}
 
-	@Given("I enter the password {word}")
-	public void iEnterThePassword(String password) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Given("I click on the save button")
-	public void iClickOnTheSaveButton() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Given("I am able to see my details")
-	public void iAmAbleToSeeMyDetails() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("I am able to see a successful registration")
+	public void iAmAbleToSeeASuccessfulRegistration() {
+	    assertTrue(this.addUserPage.getUsernameDisplayed().contains(username));
 	}
 
 	@When("I go to the login page")
 	public void iGoToTheLoginPage() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    this.driver.get(loginPage.getUrl());
+	}
+	
+	@When("I enter the username {word}")
+	public void iEnterTheUsername(String username) {
+	    loginPage.insertUsername(username);
+	}
+	@When("I enter the password {word}")
+	public void iEnterThePasswordPassword123(String password) {
+		loginPage.insertPassword(password);
 	}
 
 	@When("I click on the login button")
 	public void iClickOnTheLoginButton() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    loginPage.clickLogin();
 	}
 
 	@Then("It should be displayed {string}")
-	public void itShouldBeDisplayed(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void itShouldBeDisplayed(String message) {
+	    assertTrue(loginPage.getText().equals(message));
 	}
 }
