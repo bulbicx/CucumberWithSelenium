@@ -55,3 +55,63 @@ POM not required.
 ## Task 4
 
 Go back through your Cucumber & Selenium tests from today and take screenshots of your tests (before and after every step), the screenshots need to be attached to your generated HTML report.
+
+## Task 5
+
+Implement the feature files using BDD as step definitions
+
+Use the followings:
+
+1. Feature: DVD store accepts new dvds
+	As a user, when I add a new dvd to my store, 
+	then the DVD should be saved to the stores item list.
+	
+	Scenario: Add a new dvd
+		Given a dvd store
+		And the following new DVDs
+			|	Id	| Title 				| Year 	| Actor 				|
+			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
+			|	2		|	Polkadot			| 1998	| Marie Bulen		|
+			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
+		And the expected outputs
+	    | 1 - Jurassik Park - 2010 - Frank Blair |
+	    | 2 - Polkadot - 1998 - Marie Bulen |
+	    | 3 - Scary Movie - 2008 - Paul Kavinski |
+	  When the new DVDs are added to the store
+	  Then the get dvd list request should return the expected outputs
+	 
+2. Feature: DVD store can remove old DVDs
+  As a user, when I remove a DVD from the store, 
+  the DVD should longer be available in the stores item list.
+  
+  Scenario: Remove a dvd
+	  Given a dvd store
+	  And the following DVDs in the store
+			|	Id	| Title 				| Year 	| Actor 				|
+			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
+			|	2		|	Polkadot			| 1998	| Marie Bulen		|
+			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
+	  And the expected outputs
+	    | 2 - Polkadot - 1998 - Marie Bulen |
+	    | 3 - Scary Movie - 2008 - Paul Kavinski |
+	  When the dvd with the title "Jurassik Park" is removed
+	  Then the get dvd list request should return the expected outputs
+	  
+
+3. Feature: DVD store can update DVDs
+  As a user, when I update the details of a film, 
+  the changes should be reflected in the stores item list.
+  
+  Scenario: Update a dvd
+	  Given a dvd store
+	  And the following DVDs in the store
+			|	Id	| Title 				| Year 	| Actor 				|
+			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
+			|	2		|	Polkadot			| 1998	| Marie Bulen		|
+			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
+	  And the expected outputs
+	    | 1 - Jurassik Park - 2010 - Frank Blair |
+	    | 2 - Polkadot 2 - 1998 - Marie Bulen |
+	    | 3 - Scary Movie - 2008 - Paul Kavinski |
+	  When I change the title of the film with the id 2 to "Polkadot 2"
+	  Then the get dvd list request should return the expected outputs
