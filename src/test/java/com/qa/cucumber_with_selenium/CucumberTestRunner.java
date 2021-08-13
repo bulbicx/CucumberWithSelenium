@@ -16,7 +16,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				"html:target/cucumber-reports/cucumber-html-reports.html",
 				"junit:target/cucumber-reports/cucumber-junit-report.xml"
 		},
-		monochrome = true
+		monochrome = true,
+		tags = "@dvd_update or @dvd_removal or @dvd_addition"
 )
 public class CucumberTestRunner {
 
