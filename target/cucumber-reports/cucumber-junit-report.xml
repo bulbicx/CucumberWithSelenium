@@ -1,73 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="14.616">
-    <testcase classname="Calculator Addition" name="Integer addition" time="0.02">
-        <system-out><![CDATA[Given the number 2..........................................................passed
-And the second number 8.....................................................passed
-When the numbers are added..................................................passed
-Then the result should be 10................................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="0.278">
+    <testcase classname="DVD store accepts new dvds" name="Add a new dvd" time="0.022">
+        <system-out><![CDATA[Given a dvd store...........................................................passed
+And the following new DVDs..................................................passed
+And the expected outputs....................................................passed
+When the new DVDs are added to the store....................................passed
+Then the get dvd list request should return the expected outputs............passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Calculator Addition" name="Float addition" time="0.001">
-        <system-out><![CDATA[Given the number 2.5........................................................passed
-And the second number 8.6...................................................passed
-When the numbers are added..................................................passed
-Then the result should be 11.1..............................................passed
+    <testcase classname="DVD store can remove old DVDs" name="Remove a dvd" time="0.002">
+        <system-out><![CDATA[Given a dvd store...........................................................passed
+And the following DVDs in the store.........................................passed
+And the expected outputs....................................................passed
+When the dvd with the title "Jurassik Park" is removed......................passed
+Then the get dvd list request should return the expected outputs............passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Click button" name="Simple alert" time="4.346">
-        <system-out><![CDATA[Given I navigate to the website.............................................passed
-And I verify I am in the right page.........................................passed
-And I am in the right part of the page......................................passed
-When I click the button.....................................................passed
-Then an alert box should appear with the message "I am an alert box!".......passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Calculator division" name="Varying values for division" time="0.001">
-        <system-out><![CDATA[Given the number 15.........................................................passed
-And the second number 5.....................................................passed
-When the numbers are divided................................................passed
-Then the result should be 3.................................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Calculator division" name="Varying values for division 2" time="0.001">
-        <system-out><![CDATA[Given the number 20.........................................................passed
-And the second number 2.....................................................passed
-When the numbers are divided................................................passed
-Then the result should be 10................................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Calculator division" name="Varying values for division 3" time="0.004">
-        <system-out><![CDATA[Given the number 10.8.......................................................passed
-And the second number 2.....................................................passed
-When the numbers are divided................................................passed
-Then the result should be 5.4...............................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Login successfully" name="Login into the account" time="3.198">
-        <system-out><![CDATA[Given I navigate to "http://thedemosite.co.uk/".............................passed
-And I go to the add a user page.............................................passed
-And I register with someone and password123.................................passed
-And I am able to see a successful registration..............................passed
-When I go to the login page.................................................passed
-And I enter the username someone............................................passed
-And I enter the password password123........................................passed
-When I click on the login button............................................passed
-Then It should be displayed "**Successful Login**"..........................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Search on Bing" name="Search for doge" time="3.301">
-        <system-out><![CDATA[When I go to www.bing.com...................................................passed
-And I am on Bing hompage....................................................passed
-When I search the keyword doge..............................................passed
-Then the title of the page should contain doge..............................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Select an item" name="Successful item selected" time="3.399">
-        <system-out><![CDATA[Given I navigate to website.................................................passed
-And I am in the right page..................................................passed
-And I am in the right section of the page...................................passed
-When I select an item from a list...........................................passed
-Then I can view the item was selected.......................................passed
+    <testcase classname="DVD store can update DVDs" name="Update a dvd" time="0.001">
+        <system-out><![CDATA[Given a dvd store...........................................................passed
+And the following DVDs in the store.........................................passed
+And the expected outputs....................................................passed
+When I change the title of the film with the id 2 to "Polkadot 2"...........passed
+Then the get dvd list request should return the expected outputs............passed
 ]]></system-out>
     </testcase>
 </testsuite>
