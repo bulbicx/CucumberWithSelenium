@@ -62,7 +62,8 @@ Implement the feature files using BDD as step definitions
 
 Use the followings:
 
-1. Feature: DVD store accepts new dvds
+```
+Feature: DVD store accepts new dvds
 	As a user, when I add a new dvd to my store, 
 	then the DVD should be saved to the stores item list.
 	
@@ -79,8 +80,9 @@ Use the followings:
 	    | 3 - Scary Movie - 2008 - Paul Kavinski |
 	  When the new DVDs are added to the store
 	  Then the get dvd list request should return the expected outputs
-	 
-2. Feature: DVD store can remove old DVDs
+```
+```
+Feature: DVD store can remove old DVDs
   As a user, when I remove a DVD from the store, 
   the DVD should longer be available in the stores item list.
   
@@ -97,8 +99,9 @@ Use the followings:
 	  When the dvd with the title "Jurassik Park" is removed
 	  Then the get dvd list request should return the expected outputs
 	  
-
-3. Feature: DVD store can update DVDs
+```
+```
+Feature: DVD store can update DVDs
   As a user, when I update the details of a film, 
   the changes should be reflected in the stores item list.
   
@@ -115,3 +118,4 @@ Use the followings:
 	    | 3 - Scary Movie - 2008 - Paul Kavinski |
 	  When I change the title of the film with the id 2 to "Polkadot 2"
 	  Then the get dvd list request should return the expected outputs
+```
