@@ -68,18 +68,18 @@ Feature: DVD store accepts new dvds
 	then the DVD should be saved to the stores item list.
 	
 	Scenario: Add a new dvd
-		Given a dvd store
-		And the following new DVDs
-			|	Id	| Title 				| Year 	| Actor 				|
-			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
-			|	2		|	Polkadot			| 1998	| Marie Bulen		|
-			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
-		And the expected outputs
+	Given a dvd store
+	And the following new DVDs
+		| Id | Title 	     | Year 	| Actor 	|	
+		| 1  | Jurassik Park |	2010	| Frank Blair   |	
+		| 2  | Polkadot	     | 1998	| Marie Bulen	|
+		| 3  | Scary Movie   | 2008	| Paul Kavinski |	
+	And the expected outputs
 	    | 1 - Jurassik Park - 2010 - Frank Blair |
 	    | 2 - Polkadot - 1998 - Marie Bulen |
 	    | 3 - Scary Movie - 2008 - Paul Kavinski |
-	  When the new DVDs are added to the store
-	  Then the get dvd list request should return the expected outputs
+	When the new DVDs are added to the store
+	Then the get dvd list request should return the expected outputs
 ```
 ```
 Feature: DVD store can remove old DVDs
@@ -89,10 +89,10 @@ Feature: DVD store can remove old DVDs
   Scenario: Remove a dvd
 	  Given a dvd store
 	  And the following DVDs in the store
-			|	Id	| Title 				| Year 	| Actor 				|
-			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
-			|	2		|	Polkadot			| 1998	| Marie Bulen		|
-			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
+		| Id | Title 	     | Year 	| Actor 	|	
+		| 1  | Jurassik Park |	2010	| Frank Blair   |	
+		| 2  | Polkadot	     | 1998	| Marie Bulen	|
+		| 3  | Scary Movie   | 2008	| Paul Kavinski |	
 	  And the expected outputs
 	    | 2 - Polkadot - 1998 - Marie Bulen |
 	    | 3 - Scary Movie - 2008 - Paul Kavinski |
@@ -108,10 +108,10 @@ Feature: DVD store can update DVDs
   Scenario: Update a dvd
 	  Given a dvd store
 	  And the following DVDs in the store
-			|	Id	| Title 				| Year 	| Actor 				|
-			|	1		| Jurassik Park |	2010	|	Frank Blair 	|	
-			|	2		|	Polkadot			| 1998	| Marie Bulen		|
-			|	3		| Scary Movie		| 2008	| Paul Kavinski |	
+		| Id | Title 	     | Year 	| Actor 	|	
+		| 1  | Jurassik Park |	2010	| Frank Blair   |	
+		| 2  | Polkadot	     | 1998	| Marie Bulen	|
+		| 3  | Scary Movie   | 2008	| Paul Kavinski |	
 	  And the expected outputs
 	    | 1 - Jurassik Park - 2010 - Frank Blair |
 	    | 2 - Polkadot 2 - 1998 - Marie Bulen |
